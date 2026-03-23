@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ten-Year Promise Gift</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Hide all media elements initially */
+        .gift-gif, .gift-img, .gift-gif2 {
+            display: none;
+            max-width: 80%;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <button onclick="myFunction()">Click for Your Gift 🎁</button>
+    <p id="demo"></p>
+    
+    <!-- Hidden GIF that will appear after the prompt -->
+    <img id="giftGif" class="gift-gif" src="https://i.pinimg.com/originals/fb/43/d4/fb43d4d9c4267d4f8a3d2a11fc2434d4.gif" alt="Gift GIF">
+    
+    <!-- Hidden GIF that will appear after the prompt -->
+    <img id="giftGif2" class="gift-gif2" src="https://media1.tenor.com/m/hc6uZFkW9YAAAAAd/zootopia-judy-hopps.gif" alt="Gift GIF 2">
+
+    <script>
+    function myFunction() {
+        var phoneNumber = prompt("Enter your phone number for a personal touch:");
+        var baseText = "Happy Birthday! This is the first gift of the ten-year promise.";
+        
+        // Save phone number to localStorage
+        if (phoneNumber && phoneNumber.trim() !== "") {
+            localStorage.setItem('tenYearPromisePhone', phoneNumber.trim());
+        }
+        
+        var text;
+        if (phoneNumber == null || phoneNumber == "") {
+            text = baseText;
+        } else {
+            text = baseText;
+        }
+        
+        document.getElementById("demo").innerHTML = text.replace(/\\\\n/g, "<br>");
+        
+        // Show all three media elements after the prompt is closed
+        document.getElementById("giftGif").style.display = "block";
+        document.getElementById("giftGif2").style.display = "block";
+    }
+    </script>
+</body>
+</html>
